@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="../CssFile/signup.css">
+    <link rel="stylesheet" href="../CssFile/logo.css">
+</head>
+<body>
+    <!-- Hamburger Menu Button -->
+    <div class="hamburger-menu" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <!-- Hidden Navigation Menu -->
+    <nav id="navMenu" class="nav-menu">
+        <button onclick="window.location.href='home.html'">Home</button>
+        <button onclick="window.location.href='login.html'">Login</button>
+        <button onclick="window.location.href='template.html'">Select Template</button>
+    </nav>
+
+    <header>
+        <div class="container">
+            <h1>Sign Up for Stellar Resume</h1>
+            <p>Please enter your details to create an account.</p>
+        </div>
+    </header>
+    <!--logo html -->
+    <a href="home.html">
+        <img src="../:images/logo.png" alt="Website Logo" class="logo">
+      </a>
+
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <form id="signupForm" onsubmit="registerUser(); return false;">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <button class="back-btn" onclick="window.location.href='login.html'">Back to Login</button>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
+<script>
+    function toggleMenu() {
+        var navMenu = document.getElementById('navMenu');
+        navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
+    }
+</script>

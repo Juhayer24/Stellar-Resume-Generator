@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Resume</title>
+    <link rel="stylesheet" href="../CssFile/viewresume.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Your Resume</h1>
+        </div>
+    </header>
+    <div class="resume-container" id="resumeContainer">
+        <!-- Resume content will be injected here by JavaScript -->
+    </div>
+    <button class="home-btn" onclick="window.location.href='home.html'">Home</button>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const resumeData = JSON.parse(localStorage.getItem('resumeData'));
+            const resumeContainer = document.getElementById('resumeContainer');
+
+            if (resumeData) {
+                resumeContainer.innerHTML = `
+                    <h2>${resumeData.fullName}</h2>
+                    <p>${resumeData.email}</p>
+                    <p>${resumeData.phone}</p>
+                    <p>${resumeData.address}</p>
+                    <h3>Professional Summary</h3>
+                    <p>${resumeData.summary}</p>
+                    <h3>Work Experience</h3>
+                    <p>${resumeData.experience}</p>
+                    <h3>Education</h3>
+                    <p>${resumeData.education}</p>
+                    <h3>Skills</h3>
+                    <p>${resumeData.skills}</p>
+                `;
+            } else {
+                resumeContainer.innerHTML = '<p>No resume data found. Please go back and create your resume.</p>';
+            }
+        });
+    </script>
+</body>
+</html>
