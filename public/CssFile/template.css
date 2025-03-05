@@ -1,0 +1,107 @@
+/* Global Styles */
+body {
+    background-color: #000;
+    color: #ccc;
+    font-family: 'Georgia', sans-serif;
+}
+
+/* Header Styles */
+header {
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #aaa;
+}
+
+/* Hamburger Menu Styles */
+.hamburger-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.hamburger-menu .bar {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Navigation Menu Styles */
+.nav-menu {
+    display: none; /* Set initial display */
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #444;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100px;
+    visibility: hidden; /* Initially hidden */
+    opacity: 0; /* Initially invisible */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+
+}
+/* Home Button Styles */
+.nav-menu button {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Georgia', sans-serif;
+}
+
+
+
+/* Show menu */
+.nav-menu.show {
+    display: block; /* Show when toggled */
+    visibility: visible; /* Make visible */
+    opacity: 1; /* Fade in */
+}
+.nav-menu button:hover {
+    background-color: #0056b3;
+}
+
+/* Template Container Styles */
+.template-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px 0;
+}
+
+.template-box {
+    background: #444;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.template-box img {
+    width: 300px;
+    height: 400px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.template-box img:hover {
+    transform: scale(1.05);
+}

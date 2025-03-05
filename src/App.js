@@ -1,23 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import RegisterForm from "./components/RegisterForm"; // Existing RegisterForm component
+import Login from "./components/Login"; // Import the new Login component
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Resume Builder</h1>
+      <Login /> {/* Adding the Login component */}
+      <RegisterForm /> {/* Keeping the RegisterForm component */}
     </div>
   );
 }

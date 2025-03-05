@@ -1,0 +1,22 @@
+/* Basic styling for the entire page */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Logo styling */
+  .logo {
+    position: fixed; /* Keeps the logo fixed in the top-left corner */
+    top: 10px;
+    left: 10px;
+    width: 100px; /* Adjust the width of your logo */
+    height: auto;
+    z-index: 100; /* Makes sure the logo stays above other content */
+    cursor: pointer; /* Changes the cursor to a pointer to indicate it’s clickable */
+  }
+  
+  /* Styling for link to make sure it doesn’t have any underline */
+  a {
+    text-decoration: none;
+  }
+  

@@ -1,0 +1,122 @@
+/* Global Styles */
+body {
+    background-color: #000;
+    color: #ccc;
+    font-family: 'Georgia', sans-serif;
+}
+
+/* Header Styles */
+header {
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #fff;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.hamburger-menu .bar {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Navigation Menu */
+.nav-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #444;
+    border-radius: 5px;
+    padding: 10px;
+    width: 150px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nav-menu button {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Georgia', sans-serif;
+    margin-bottom: 10px;
+}
+
+.nav-menu button:hover {
+    background-color: #0056b3;
+}
+
+/* Show menu when toggled */
+.nav-menu.show {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Resume Form Styles */
+.resume-form-container {
+    padding: 50px;
+    background-color: #333;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.resume-form-container label {
+    display: block;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+/* Input and Textarea Styles */
+.resume-form-container input, 
+.resume-form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #222; /* Dark background for input fields */
+    color: #fff; /* White text in input fields */
+}
+
+/* Generate Resume Button Styles */
+.resume-form-container button.animate-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: block; /* Ensure the button is block-level */
+    margin: 0 auto; /* Center horizontally */
+    margin-top: 20px; /* Maintain some margin on top */
+}
+
+/* Hover Effect */
+.resume-form-container button.animate-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Animate on hover */
+}

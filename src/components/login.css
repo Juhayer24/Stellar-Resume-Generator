@@ -1,0 +1,152 @@
+/* Global Styles */
+body {
+    background-color: #000;
+    color: #ccc;
+    font-family: 'Georgia', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 10px 0;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #aaa;
+}
+
+/* Hamburger Menu Styles */
+.hamburger-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.hamburger-menu .bar {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+/* Navigation Menu Styles */
+.nav-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #444;
+    border-radius: 5px;
+    padding: 10px;
+    width: 150px;
+    z-index: 1000;
+}
+
+/* Menu Buttons */
+.nav-menu button {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 5px 0;
+    cursor: pointer;
+    font-family: 'Georgia', sans-serif;
+}
+
+.nav-menu button:hover {
+    background-color: #0056b3;
+}
+
+/* Login Container Styles */
+.login-container {
+    background-color: #222;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Georgia', sans-serif;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #fff;
+    font-family: 'Georgia', sans-serif;
+}
+
+.login-container label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+    color: #ccc;
+    font-family: 'Georgia', sans-serif;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #333;
+    color: white;
+    font-family: 'Georgia', sans-serif;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Georgia', sans-serif;
+}
+
+.login-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Home Button */
+.home-btn {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: block;
+    width: 50%;
+}
+
+.home-btn:hover {
+    background: #555;
+}
+
+/* Align entire form in the middle of the page */
+body, html {
+    height: 100%;
+}

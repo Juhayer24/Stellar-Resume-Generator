@@ -1,0 +1,41 @@
+
+/* Home Page Styles */
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.step-box {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+}
+
+.step-box h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.step-box p {
+    font-size: 1em;
+}
+
+.generate-btn {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: 'Georgia', sans-serif;
+}
+
+.generate-btn:hover {
+    background: #0056b3;
+    font-family: 'Georgia', sans-serif;
+}
