@@ -10,6 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 /* Header Styles */
@@ -29,26 +30,10 @@ header p {
     color: #aaa;
 }
 
-/* Hamburger Menu Styles */
-.hamburger-menu {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-.hamburger-menu .bar {
-    width: 30px;
-    height: 4px;
-    background-color: #fff;
-    margin: 6px 0;
-    transition: 0.4s;
-}
 
 /* Navigation Menu Styles */
 .nav-menu {
-    display: none;
+    display: none; /* Hidden by default */
     position: absolute;
     top: 60px;
     right: 20px;
@@ -56,7 +41,13 @@ header p {
     border-radius: 5px;
     padding: 10px;
     width: 150px;
-    z-index: 1000;
+    z-index: 1000; /* Ensure it's on top */
+    animation: slide-down 0.5s ease-in-out;
+}
+
+@keyframes slide-down {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Menu Buttons */
@@ -76,33 +67,37 @@ header p {
     background-color: #0056b3;
 }
 
-/* Login Container Styles */
-.login-container {
+/* Signup Container Styles */
+.signup-container {
     background-color: #222;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     width: 350px;
     text-align: center;
-    margin-top: 50px;
+    animation: fadeIn 0.8s ease-in-out;
     font-family: 'Georgia', sans-serif;
 }
 
-.login-container h2 {
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.signup-container h2 {
     margin-bottom: 20px;
     color: #fff;
     font-family: 'Georgia', sans-serif;
 }
 
-.login-container label {
+.signup-container label {
     display: block;
     margin-bottom: 8px;
     text-align: left;
     color: #ccc;
-    font-family: 'Georgia', sans-serif;
 }
 
-.login-container input {
+.signup-container input {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -113,7 +108,7 @@ header p {
     font-family: 'Georgia', sans-serif;
 }
 
-.login-container button {
+.signup-container button {
     width: 100%;
     padding: 12px;
     background-color: #007bff;
@@ -125,28 +120,23 @@ header p {
     font-family: 'Georgia', sans-serif;
 }
 
-.login-container button:hover {
+.signup-container button:hover {
     background-color: #0056b3;
 }
 
-/* Home Button */
-.home-btn {
-    background: #000;
-    color: #fff;
+/* Back to Login Button */
+.back-btn {
+    background-color: #444;
+    color: white;
+    padding: 12px;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    margin-top: 20px;
-    display: block;
-    width: 50%;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+    font-family: 'Georgia', sans-serif;
 }
 
-.home-btn:hover {
-    background: #555;
-}
-
-/* Align entire form in the middle of the page */
-body, html {
-    height: 100%;
+.back-btn:hover {
+    background-color: #333;
 }

@@ -15,35 +15,19 @@ body {
 /* Header Styles */
 header {
     text-align: center;
-    color: #ffffff;
+    color: #060404;
     margin-bottom: 20px;
 }
 
 header h1 {
     font-size: 2.5em;
     margin: 10px 0;
+    color: #ffffff;
 }
 
 header p {
     font-size: 1.2em;
     color: #aaa;
-}
-
-/* Hamburger Menu Styles */
-.hamburger-menu {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-.hamburger-menu .bar {
-    width: 30px;
-    height: 4px;
-    background-color: #fff;
-    margin: 6px 0;
-    transition: 0.4s;
 }
 
 /* Navigation Menu Styles */
@@ -84,13 +68,15 @@ header p {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     width: 350px;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 10px;
+    right: 10px;         /* Set this number to control how far from the right it is */
+    top: 20%; 
     font-family: 'Georgia', sans-serif;
 }
 
 .login-container h2 {
     margin-bottom: 20px;
-    color: #fff;
+    color: #ffffff;
     font-family: 'Georgia', sans-serif;
 }
 
@@ -149,4 +135,5 @@ header p {
 /* Align entire form in the middle of the page */
 body, html {
     height: 100%;
-}
+
+} 

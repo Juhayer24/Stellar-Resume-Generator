@@ -22,22 +22,7 @@ header p {
     color: #aaa;
 }
 
-/* Hamburger Menu Styles */
-.hamburger-menu {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-    z-index: 1000;
-}
 
-.hamburger-menu .bar {
-    width: 30px;
-    height: 4px;
-    background-color: #fff;
-    margin: 6px 0;
-    transition: 0.4s;
-}
 
 /* Navigation Menu Styles */
 .nav-menu {
