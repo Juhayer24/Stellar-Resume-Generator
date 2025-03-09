@@ -10,7 +10,7 @@ function Template1() {
       <header>
         <div className="container">
           <h1>Template 1 - Create Your Resume</h1>
-          <a href="/home">
+          <a href="/">
             <img src={logo} alt="Website Logo" className="logo" />
           </a>
 
@@ -23,8 +23,8 @@ function Template1() {
 
           {/* Hidden Navigation Menu */}
           <nav id="navMenu" className="nav-menu">
-            <button onClick={() => (window.location.href = "/home")}>Home</button>
-            <button onClick={() => (window.location.href = "/template")}>Select Template</button>
+            <button onClick={() => (window.location.href = "/")}>Home</button>
+            <button onClick={() => (window.location.href = "/Template")}>Select Template</button>
           </nav>
         </div>
       </header>

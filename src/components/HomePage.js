@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./home.css";
 import "./faq.css";
 import "./general.css";
+import "./login.css";
 import logo from "./images/logo.png"; // Import the logo image
 
 function HomePage() {
@@ -59,6 +60,7 @@ function HomePage() {
           <button className="login-btn" onClick={() => window.location.href = 'Login'}>Login</button>
         </div>
       )}
+    
 
       {/* Profile Section */}
       <div className="profile" id="profile"></div>

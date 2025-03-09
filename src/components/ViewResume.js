@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./general.css";
 import "./viewresume.css";
+import logo from "./images/logo.png"; // Import the logo image
 
 const ViewResume = () => {
   const [resumeData, setResumeData] = useState(null);
@@ -39,7 +40,7 @@ const ViewResume = () => {
           <p>No resume data found. Please go back and create your resume.</p>
         )}
       </div>
-      <button className="home-btn" onClick={() => window.location.href = 'home.html'}>
+      <button className="home-btn" onClick={() => window.location.href = '/'}>
         Home
       </button>
     </div>

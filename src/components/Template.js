@@ -1,8 +1,7 @@
 // src/components/Template.js
 import React from "react";
 import "./template.css";  // Import the template-specific CSS
-import logo from "./images/logo.png"; // Import the logo image
-import './general.css';
+import logo from "./images/logo.png";
 
 function Template() {
   return (
@@ -12,7 +11,7 @@ function Template() {
         <p>Choose from one of our professionally designed templates below.</p>
 
         {/* Logo */}
-        <a href="/home">
+        <a href="/">
           <img src={logo} alt="Website Logo" className="logo" />
         </a>
 
@@ -22,10 +21,9 @@ function Template() {
           <div className="bar"></div>
           <div className="bar"></div>
         </div>
-
         {/* Hidden Navigation Menu */}
         <nav id="navMenu" className="nav-menu">
-          <button onClick={() => window.location.href = "/home"}>Home</button>
+          <button onClick={() => window.location.href = "/"}>Home</button>
         </nav>
       </header>
 
@@ -34,7 +32,7 @@ function Template() {
         <div className="template-box">
           <a href="/template1">
             <img
-              src="../images/Juhayer-Resume.png"
+              src="./Juhayer-Resume.png"
               alt="Template 1"
             />
           </a>

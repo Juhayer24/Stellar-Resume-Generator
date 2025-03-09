@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./general.css";
 import "./template2.css";
+import logo from "./images/logo.png"; // Import the logo image
 
 const Template2 = () => {
   const [formData, setFormData] = useState({
@@ -39,9 +40,9 @@ const Template2 = () => {
           <h1>Template 2 - Create Your Resume</h1>
 
           {/* Logo */}
-          <a href="home.html">
+          <a href="/">
             <img
-              src="../:images/logo.png"
+              src="./images/logo.png"
               alt="Website Logo"
               className="logo"
             />
@@ -56,11 +57,11 @@ const Template2 = () => {
 
           {/* Hidden Navigation Menu */}
           <nav id="navMenu" className="nav-menu">
-            <button onClick={() => (window.location.href = "home.html")}>
+            <button onClick={() => (window.location.href = "/")}>
               Home
             </button>
             <button
-              onClick={() => (window.location.href = "template.html")}
+              onClick={() => (window.location.href = "Template.html")}
             >
               Select Template
             </button>

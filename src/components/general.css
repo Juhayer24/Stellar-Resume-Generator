@@ -57,7 +57,7 @@ header img {
 
 /* Menu Content */
 .menu-content {
-    display: none;
+    /* display: none; */
     position: absolute;
     top: 60px; /* Right under the hamburger menu */
     right: 20px;

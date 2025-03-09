@@ -1,6 +1,7 @@
 import React from "react";
 import './general.css';
 import './signup.css';
+import logo from "./images/logo.png";
 
 const Signup = () => {
     // Function to handle form submission (example)
@@ -30,9 +31,9 @@ const Signup = () => {
 
             {/* Hidden Navigation Menu */}
             <nav id="navMenu" className="nav-menu">
-                <button onClick={() => window.location.href = 'home.html'}>Home</button>
-                <button onClick={() => window.location.href = 'login.html'}>Login</button>
-                <button onClick={() => window.location.href = 'template.html'}>Select Template</button>
+                <button onClick={() => window.location.href = '/'}>Home</button>
+                <button onClick={() => window.location.href = '/Login'}>Login</button>
+                <button onClick={() => window.location.href = '/Template'}>Select Template</button>
             </nav>
 
             <header>
@@ -44,7 +45,7 @@ const Signup = () => {
 
             {/* Logo */}
             <a href="/">
-                <img src="../images/logo.png" alt="Website Logo" className="logo" />
+                <img src="./logo.png" alt="Website Logo" className="logo" />
             </a>
 
             <div className="signup-container">
@@ -65,7 +66,7 @@ const Signup = () => {
                     <button type="submit">Sign Up</button>
                 </form>
 
-                <button className="back-btn" onClick={() => window.location.href = 'login.html'}>Back to Login</button>
+                <button className="back-btn" onClick={() => window.location.href = '/Login'}>Back to Login</button>
             </div>
         </div>
     );
