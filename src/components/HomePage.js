@@ -18,7 +18,6 @@ function HomePage() {
 
   return (
     <div>
-      <header>
         <div className="container">
           <h1>Stellar Resume</h1>
           <p>Your ultimate tool for creating a professional resume with ease. Get Your Dream job with our resume generator!!!</p>
@@ -41,7 +40,6 @@ function HomePage() {
           </div>
           <button className="generate-btn" onClick={() => window.location.href = 'Template'}>Generate Your Own Resume</button>
         </div>
-      </header>
 
       {/* Logo Section */}
       <a href="/">

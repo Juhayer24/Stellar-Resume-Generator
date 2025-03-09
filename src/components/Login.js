@@ -34,7 +34,7 @@ const Login = () => {
         </div>
 
         {/* Logo */}
-        <a href="/home">
+        <a href="/">
           <img src={logo} alt="Website Logo" className="logo" />
         </a>
 

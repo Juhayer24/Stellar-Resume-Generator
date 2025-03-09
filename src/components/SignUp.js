@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import './general.css';
 import './signup.css';
 
@@ -14,7 +14,6 @@ const Signup = () => {
         console.log("User Registered:", { firstName, lastName, email, password });
         // You can add your form submission logic here, e.g., API request
     };
-
     const toggleMenu = () => {
         const navMenu = document.getElementById('navMenu');
         navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
@@ -44,7 +43,7 @@ const Signup = () => {
             </header>
 
             {/* Logo */}
-            <a href="home.html">
+            <a href="/">
                 <img src="../images/logo.png" alt="Website Logo" className="logo" />
             </a>
 
