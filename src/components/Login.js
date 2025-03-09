@@ -37,14 +37,15 @@ const Login = () => {
         <a href="/">
           <img src={logo} alt="Website Logo" className="logo" />
         </a>
+        
 
         {/* Navigation Menu */}
         {menuOpen && (
           <nav className="nav-menu">
-            <button onClick={() => (window.location.href = "/home")}>
+            <button onClick={() => (window.location.href = "/")}>
               Home
             </button>
-            <button onClick={() => (window.location.href = "/template")}>
+            <button onClick={() => (window.location.href = "Template")}>
               Select Template
             </button>
           </nav>
@@ -76,7 +77,7 @@ const Login = () => {
           <button type="submit">Login</button>
         </form>
         <p>
-          Don't have an account? <a href="/signup">Sign up</a>
+          Don't have an account? <a href="SignUp">Sign up</a>
         </p>
       </div>
     </div>

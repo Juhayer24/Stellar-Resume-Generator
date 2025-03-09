@@ -3,6 +3,7 @@ body {
     background-color: #000;
     color: #ccc;
     font-family: 'Georgia', sans-serif;
+
 }
 
 /* Header Styles */
@@ -11,6 +12,7 @@ header {
     text-align: center;
     color: #ffffff;
     position: relative;
+    margin-top: 20px;
 }
 
 header h1 {
@@ -22,11 +24,9 @@ header p {
     color: #aaa;
 }
 
-
-
 /* Navigation Menu Styles */
 .nav-menu {
-    display: none; /* Set initial display */
+    display: none;
     position: absolute;
     top: 60px;
     right: 20px;
@@ -34,11 +34,11 @@ header p {
     border-radius: 5px;
     padding: 10px;
     width: 100px;
-    visibility: hidden; /* Initially hidden */
-    opacity: 0; /* Initially invisible */
-    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
-
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
+
 /* Home Button Styles */
 .nav-menu button {
     width: 100%;
@@ -51,14 +51,12 @@ header p {
     font-family: 'Georgia', sans-serif;
 }
 
-
-
-/* Show menu */
 .nav-menu.show {
-    display: block; /* Show when toggled */
-    visibility: visible; /* Make visible */
-    opacity: 1; /* Fade in */
+    display: block;
+    visibility: visible;
+    opacity: 1;
 }
+
 .nav-menu button:hover {
     background-color: #0056b3;
 }
@@ -66,27 +64,54 @@ header p {
 /* Template Container Styles */
 .template-container {
     display: flex;
+    gap: 30px;
     justify-content: center;
-    gap: 20px;
     padding: 50px 0;
+    margin-top: -50px;
 }
 
+/* Template Box */
 .template-box {
     background: #444;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+    width: 300px;
+    height: 450px;
+    display: flex;
+    flex-direction: column; /* Stack items */
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
 }
 
-.template-box img {
+/* Template Image */
+.template-img {
     width: 300px;
     height: 400px;
     border-radius: 10px;
-    margin-bottom: 10px;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
 }
 
-.template-box img:hover {
+/* Hover Effect */
+.template-img:hover {
     transform: scale(1.05);
+}
+
+/* Overlay Text (Button) */
+.template-overlay {
+    position: absolute;
+    bottom: 10px;
+    background: rgba(47, 43, 43, 0.6);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.template-overlay:hover {
+    background: rgba(0, 0, 0, 0.8);
 }
