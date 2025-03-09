@@ -47,7 +47,7 @@ function Template() {
         {/* Template 3 */}
         <div className="template-box">
           <img
-            src="https://beamjobs.wpenginepowered.com/wp-content/uploads/2023/01/academic-resume-template.png"
+            src="https://resumecompanion.com/wp-content/uploads/2019/08/Simple-Resume-Template-Black-White.png"
             alt="Template 3"
             className="template-img"
           />

@@ -26,16 +26,16 @@ header p {
 
 /* Navigation Menu Styles */
 .nav-menu {
-    display: none;
+    /* display: none; */
     position: absolute;
-    top: 60px;
-    right: 20px;
-    background-color: #444;
+    top:40px !important;
+    right: -160px !important;
+    background-color: #000000 !important;
     border-radius: 5px;
     padding: 10px;
-    width: 100px;
-    visibility: hidden;
-    opacity: 0;
+    width: 90px !important;
+    /* visibility: hidden; */
+    /* opacity: 0; */
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
@@ -43,7 +43,7 @@ header p {
 .nav-menu button {
     width: 100%;
     background-color: #007bff;
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -58,7 +58,7 @@ header p {
 }
 
 .nav-menu button:hover {
-    background-color: #0056b3;
+    background-color: #0057b3;
 }
 
 /* Template Container Styles */
