@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./components/Login"; // Import the new Login component
 import HomePage from "./components/HomePage";
 import Template from "./components/Template";
@@ -6,22 +7,26 @@ import Template1 from "./components/Template1";
 import Template2 from "./components/Template2";
 import Template3 from "./components/Template3";
 import ViewResume from "./components/ViewResume";
-import "./App.css";
 import Signup from "./components/SignUp";
+import "./App.css"; // Import your CSS
 
 function App() {
   return (
-    <div className="App">
-      <h1>Resume Builder</h1>
-      <Login /> {/* Adding the Login component */}
-      <HomePage />
-      <Signup />
-      <Template />
-      <Template1 />
-      <Template2 />
-      <Template3 />
-      <ViewResume />
-    </div> // Fixed missing closing div
+    <Router>
+      
+        <Routes>
+          {/* Define all your routes */}
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/template" element={<Template />} />
+          <Route path="/template1" element={<Template1 />} />
+          <Route path="/template2" element={<Template2 />} />
+          <Route path="/template3" element={<Template3 />} />
+          <Route path="/viewresume" element={<ViewResume />} />
+        </Routes>
+      
+    </Router>
   );
 }
 

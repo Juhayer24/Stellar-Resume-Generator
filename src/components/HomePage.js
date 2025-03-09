@@ -39,12 +39,12 @@ function HomePage() {
               <p>Customize and review your resume</p>
             </div>
           </div>
-          <button className="generate-btn" onClick={() => window.location.href = 'template.html'}>Generate Your Own Resume</button>
+          <button className="generate-btn" onClick={() => window.location.href = 'Template'}>Generate Your Own Resume</button>
         </div>
       </header>
 
       {/* Logo Section */}
-      <a href="home.html">
+      <a href="/">
         <img src={logo} alt="Website Logo" className="logo" />
       </a>
 
@@ -58,7 +58,7 @@ function HomePage() {
       {/* Menu Content */}
       {menuVisible && (
         <div className="menu-content" id="menuContent">
-          <button className="login-btn" onClick={() => window.location.href = 'login.html'}>Login</button>
+          <button className="login-btn" onClick={() => window.location.href = 'Login'}>Login</button>
         </div>
       )}
 
