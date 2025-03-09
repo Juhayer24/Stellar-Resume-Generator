@@ -17,27 +17,25 @@ const Login = () => {
     console.log("Email:", email);
     console.log("Password:", password);
     // Add authentication logic here
-  };
+  };  
+       
+
 
   return (
     <div className="login-page">
+        <div className="hamburger-menu" onClick={toggleMenu}>
+          <div className="line"></div>
+          <div className="Line"></div>
+          <div className="Line"></div>
+        </div>
+        <a href="/">
+          <img src={logo} alt="Website Logo" className="logo" />
+        </a>
       <header>
         <div className="container">
           <h1>Login to Stellar Resume</h1>
           <p>Please enter your email and password to login.</p>
         </div>
-
-        <div className="hamburger-menu" onClick={toggleMenu}>
-          <div className="bar"></div>
-          <div className="bar"></div>
-          <div className="bar"></div>
-        </div>
-
-        {/* Logo */}
-        <a href="/">
-          <img src={logo} alt="Website Logo" className="logo" />
-        </a>
-        
 
         {/* Navigation Menu */}
         {menuOpen && (

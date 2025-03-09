@@ -19,10 +19,6 @@ function Template() {
         <h1>Select Your Resume Template</h1>
         <p>Choose from one of our professionally designed templates below.</p>
 
-        {/* Logo */}
-        
-
-        
 
         {/* Hidden Navigation Menu */}
         <nav id="navMenu" className="nav-menu">
