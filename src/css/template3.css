@@ -33,14 +33,6 @@ header h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.logo {
-    max-height: 60px;
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
 /* Hamburger Menu Styles */
 .hamburger-menu {
     display: flex;

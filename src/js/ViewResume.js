@@ -1,7 +1,7 @@
 import React from "react";
-import "./general.css";
-import "./viewresume.css";
-import logo from "./images/logo.png";
+import "../css/general.css";
+import "../css/viewresume.css";
+import logo from "../components/images/logo.png";
 
 const ViewResume = (resumeData) => {
   // Use the passed resumeData props, or try to get from localStorage as fallback

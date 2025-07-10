@@ -1,7 +1,7 @@
 import React from "react";
-import './general.css';
-import './signup.css';
-import logo from "./images/logo.png";
+import '../css/general.css';
+import '../css/signup.css';
+import logo from "../components/images/logo.png";
 
 const Signup = () => {
     // Function to handle form submission (example)

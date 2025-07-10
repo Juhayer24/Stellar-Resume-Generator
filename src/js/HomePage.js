@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "./home.css";
-import "./faq.css";
-import "./general.css";
-import "./login.css";
-import logo from "./images/logo.png"; // Import the logo image
+import "../css/home.css";
+import "../css/faq.css";
+import "../css/general.css";
+import "../css/login.css";
+import logo from "../components/images/logo.png";
 
 function HomePage() {
   const [menuVisible, setMenuVisible] = useState(false);

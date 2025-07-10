@@ -1,8 +1,8 @@
 import React from "react";
-import "./template.css"; // Import the template-specific CSS
-import logo from "./images/logo.png";
-import "./general.css";
-import resume1 from "./images/Juhayer-Resume.png"; // Local image for Template 1
+import "../css/template.css"; // Import the template-specific CSS
+import logo from "../components/images/logo.png";
+import "../css/general.css";
+import resume1 from "../components/images/Juhayer-Resume.png"; // Local image for Template 1
 
 function Template() {
   return (

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./general.css";  // Import the common styles
-import "./login.css"; // Make sure the CSS file is in the correct location
-import logo from "./images/logo.png"; // Import the logo image
+import "../css/general.css";  // Import the common styles
+import "../css/login.css"; // Make sure the CSS file is in the correct location
+import logo from "../components/images/logo.png";
 
 const Login = () => {
   const [email, setEmail] = useState("");

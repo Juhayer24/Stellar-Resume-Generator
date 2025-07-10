@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./general.css";
-import "./template3.css";
-import logo from "./images/logo.png";
+import "../css/general.css";
+import "../css/template3.css";
+import logo from "../components/images/logo.png";
 import {viewResume} from "./ViewResume.js";
 
 const Template3 = () => {
