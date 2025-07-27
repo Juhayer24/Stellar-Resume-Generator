@@ -2,67 +2,84 @@ import React, { useState } from "react";
 import "../css/home.css";
 import "../css/faq.css";
 import "../css/general.css";
-import "../css/login.css";
+// No need to import login.css here as it's specific to the login page
 import logo from "../components/images/logo.png";
 
 function HomePage() {
   const [menuVisible, setMenuVisible] = useState(false);
 
+  // Toggles the visibility of the navigation menu
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
   };
 
+  // Toggles the visibility of FAQ answers
   const toggleAnswer = (index) => {
     const answerElement = document.getElementById(`faq-answer-${index}`);
-    answerElement.style.display = answerElement.style.display === "block" ? "none" : "block";
+    // Check if the element exists before trying to change its style
+    if (answerElement) {
+      answerElement.style.display = answerElement.style.display === "block" ? "none" : "block";
+    }
   };
 
   return (
     <div>
-        <div className="container">
+      {/* Header Section - Contains logo, title, and hamburger menu */}
+      <header>
+        {/* Logo Section - Placed inside header for correct positioning */}
+        <a href="/">
+          <img src={logo} alt="Website Logo" className="logo" />
+        </a>
+
+        {/* Hamburger Menu - Placed inside header for correct positioning */}
+        <div className="hamburger-menu" id="hamburgerMenu" onClick={toggleMenu}>
+          {/* Corrected class names for bars */}
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </div>
+
+        {/* Menu Content - Conditionally rendered based on state */}
+        {menuVisible && (
+          <div className="menu-content" id="menuContent">
+            <button className="login-btn" onClick={() => window.location.href = 'Login'}>Login</button>
+            {/* Add other menu items here if needed, e.g., Template */}
+            <button className="login-btn" onClick={() => window.location.href = 'Template'}>Templates</button>
+          </div>
+        )}
+
+        {/* Main Header Title and Description */}
+        <div className="container"> {/* Container for header text */}
           <h1>Stellar Resume</h1>
           <p>Your ultimate tool for creating a professional resume with ease. Get Your Dream job with our resume generator!!!</p>
-          <img src="https://cdn-images.zety.com/images/zety/landings/builder/in/resume-builder-template@3x.png" width="300" height="300" alt="Resume Builder Template" />
-          <img src="https://www.livecareer.com/lcapp/uploads/2023/11/resume-builder-banner.png" width="300" height="300" alt="Resume Builder Banner" />
-          <img src="https://enhancv.com/_next/static/images/resume4-eb8e2bacc73eb143b714ffec42b44926.webp" width="300" height="300" alt="Resume Example" />
-          <div className="steps">
-            <div className="step-box">
-              <h2>Step 1</h2>
-              <p>Enter your personal details</p>
-            </div>
-            <div className="step-box">
-              <h2>Step 2</h2>
-              <p>Add your work experience and skills</p>
-            </div>
-            <div className="step-box">
-              <h2>Step 3</h2>
-              <p>Customize and review your resume</p>
-            </div>
+        </div>
+      </header>
+
+      {/* Main Content Area */}
+      <main className="container"> {/* Use a <main> tag for primary content */}
+        {/* Images - Removed hardcoded width/height to allow CSS to control responsiveness */}
+        <img src="https://cdn-images.zety.com/images/zety/landings/builder/in/resume-builder-template@3x.png" alt="Resume Builder Template" className="responsive-img" />
+        <img src="https://www.livecareer.com/lcapp/uploads/2023/11/resume-builder-banner.png" alt="Resume Builder Banner" className="responsive-img" />
+        <img src="https://enhancv.com/_next/static/images/resume4-eb8e2bacc73eb143b714ffec42b44926.webp" alt="Resume Example" className="responsive-img" />
+
+        <div className="steps">
+          <div className="step-box">
+            <h2>Step 1</h2>
+            <p>Enter your personal details</p>
           </div>
-          <button className="generate-btn" onClick={() => window.location.href = 'Template'}>Generate Your Own Resume</button>
+          <div className="step-box">
+            <h2>Step 2</h2>
+            <p>Add your work experience and skills</p>
+          </div>
+          <div className="step-box">
+            <h2>Step 3</h2>
+            <p>Customize and review your resume</p>
+          </div>
         </div>
+        <button className="generate-btn" onClick={() => window.location.href = 'Template'}>Generate Your Own Resume</button>
+      </main>
 
-      {/* Logo Section */}
-      <a href="/">
-        <img src={logo} alt="Website Logo" className="logo" />
-      </a>
-
-      {/* Hamburger Menu */}
-      <div className="hamburger-menu" id="hamburgerMenu" onClick={toggleMenu}>
-        <div className="line"></div>
-        <div className="line"></div>
-        <div className="line"></div>
-      </div>
-
-      {/* Menu Content */}
-      {menuVisible && (
-        <div className="menu-content" id="menuContent">
-          <button className="login-btn" onClick={() => window.location.href = 'Login'}>Login</button>
-        </div>
-      )}
-    
-
-      {/* Profile Section */}
+      {/* Profile Section - Typically hidden until logged in */}
       <div className="profile" id="profile"></div>
 
       {/* FAQ Section */}

@@ -5,66 +5,109 @@ body {
     color: #ffffff;
     background-color: #000;
     text-align: center;
+    line-height: 1.6; /* Improved readability */
+    /* Removed height: 100vh and flex properties from here to allow natural scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    margin-top: 500px;
+    position: relative;
+    box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
 }
 
 /* Header Styles */
 header {
-    padding: 50px 0;
-    
+    padding: 30px 0;
+    position: relative;
+    background: #111;
+    border-bottom: 2px solid #007bff;
+    margin-bottom: 30px;
+    min-height: 100px;
+    display: flex; /* Use flexbox for header content alignment */
+    align-items: center; /* Vertically align items in the center */
+    justify-content: center; /* Horizontally center items */
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
 }
 
 header h1 {
-    font-size: 3em;
-    margin: 0;            /* Remove extra margin around the heading */
-    font-family: 'Georgia', sans-serif;
+    font-size: 2.5em;
+    color: #fff;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    position: relative;
+    flex-grow: 1; /* Allows the heading to take up available space */
 }
 
-
-header p {
-    font-size: 1.2em;
-    margin-bottom: 40px;
-}
-
-header img {
-    margin: 10px;
-    border-radius: 10px;
-}
-
-/* Hamburger Menu */
-.hamburger-menu {
+/* Logo Styles */
+.logo {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    z-index: 2;
+}
+
+/* Specific style for logo within an anchor tag, as seen in original */
+a img {
+    position: absolute;
+    top: 15px;
+    left: 0px;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+/* Hamburger Menu Styles */
+.hamburger-menu {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    z-index: 1000;
-}
-
-.hamburger-menu .line {
+    justify-content: space-between;
     width: 30px;
-    height: 3px;
-    background: white;
+    height: 21px; /* 3 bars * 3px height + 2 gaps * (approx 6px) */
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000; /* Ensure it's on top of other content */
 }
 
-/* Menu Content */
+.bar { /* Style for each individual bar in the hamburger icon */
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Menu Content (Navigation) Styles - these are general styles, specific positioning might be overridden by page-specific CSS */
 .menu-content {
-    /* display: none; */
     position: absolute;
-    top: 60px; /* Right under the hamburger menu */
+    top: 60px; /* Adjusted to be below the header/hamburger */
     right: 20px;
     background: #000;
     padding: 10px;
     border-radius: 10px;
     z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    border: 1px solid #444;
+    display: none; /* Hidden by default, toggled by JS */
+    visibility: hidden; /* For smooth transition */
+    opacity: 0; /* For smooth transition */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.menu-content.show { /* Class added by JS to show the menu */
+    display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
 .menu-content .login-btn {
@@ -76,17 +119,23 @@ header img {
     cursor: pointer;
     font-size: 1em; /* Smaller font size */
     font-family: 'Georgia', sans-serif;
+    width: 100%; /* Ensure button takes full width of menu */
+    margin-bottom: 5px; /* Space between buttons */
+}
+
+.menu-content .login-btn:last-child {
+    margin-bottom: 0;
 }
 
 .menu-content .login-btn:hover {
     background: #0056b3; /* Darker blue on hover */
 }
 
-/* Profile Styles */
+/* Profile Styles - typically hidden and shown with JS */
 .profile {
     position: absolute;
     top: 20px;
-    right: 60px;
+    right: 60px; /* Positioned to the left of hamburger */
     background: #444;
     border-radius: 50%;
     width: 50px;
@@ -96,15 +145,76 @@ header img {
     justify-content: center;
     color: white;
     font-size: 1.3em;
-    display: none;
+    display: none; /* Hidden by default */
+    z-index: 2;
 }
 
+/* Responsive Styles for General elements */
+@media (max-width: 768px) {
+    .logo {
+        width: 40px;
+        height: 40px;
+        left: 10px;
+    }
+    .hamburger-menu {
+        width: 26px;
+        height: 18px;
+        right: 10px;
+        top: 50%; /* Ensure it stays vertically centered */
+        transform: translateY(-50%);
+    }
+    header h1 {
+        font-size: 1.3em;
+        padding-top: 10px; /* Adjust padding for smaller font size */
+    }
+    .container {
+        padding: 0 10px; /* Reduce padding on smaller screens */
+    }
+    /* Adjust header padding to ensure content fits */
+    header {
+        padding: 20px 0;
+    }
+    /* Adjust logo and hamburger menu top/transform for smaller heights */
+    .logo, .hamburger-menu {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .menu-content {
+        top: 55px; /* Adjust menu position for smaller header */
+        right: 10px;
+        width: 150px;
+    }
+}
 
-a img {
-    position: absolute;  /* Use absolute positioning */
-    top: 15px;           /* Adjust the top value to align the logo vertically */
-    left: 00px;         /* Align the logo to the left side */
-    width: 80px;         /* Adjust the logo size */
-    height: 80px;        /* Maintain the aspect ratio */
-    object-fit: contain; /* Ensure the logo maintains its aspect ratio */
+@media (max-width: 480px) {
+    .logo {
+        width: 35px;
+        height: 35px;
+        left: 5px;
+    }
+    .hamburger-menu {
+        width: 24px;
+        height: 16px;
+        right: 5px;
+    }
+    header h1 {
+        font-size: 1.1em; /* Even smaller font for very small screens */
+    }
+    .container {
+        padding: 0 5px; /* Further reduce padding */
+    }
+    /* Ensure header elements don't overlap on very small screens */
+    header {
+        padding: 15px 0;
+        min-height: 80px; /* Reduce min-height */
+    }
+    .menu-content {
+        top: 50px;
+        right: 5px;
+        width: 120px;
+    }
+    .menu-content .login-btn {
+        padding: 5px 15px;
+        font-size: 0.9em;
+    }
 }

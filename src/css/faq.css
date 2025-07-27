@@ -38,3 +38,28 @@
     max-width: 800px; /* Added max-width */
     margin: 0 auto; /* Centering the faq answer box */
 }
+
+/* Responsive Styles for FAQ */
+@media (max-width: 768px) {
+    .faq {
+        padding: 30px 10px;
+    }
+
+    .faq h2 {
+        font-size: 1.5em;
+    }
+
+    .faq-question,
+    .faq-answer {
+        max-width: 95%; /* Adjust max-width for smaller screens */
+        padding: 8px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq-question,
+    .faq-answer {
+        font-size: 0.85em;
+    }
+}

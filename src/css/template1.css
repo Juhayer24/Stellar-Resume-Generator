@@ -5,10 +5,11 @@
     display: flex;
     gap: 10px;
     width: 100%;
-  }
+    flex-wrap: wrap; /* Allow select boxes to wrap on smaller screens */
+}
   
-  .date-select select {
-    flex: 1;
+.date-select select {
+    flex: 1; /* Allow select boxes to grow and shrink */
     padding: 10px;
     border: 1px solid #444;
     border-radius: 5px;
@@ -17,81 +18,106 @@
     font-family: inherit;
     font-size: 1rem;
     transition: all 0.3s ease;
-    appearance: none;
+    appearance: none; /* Remove default browser styling for select */
     background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
     background-repeat: no-repeat;
     background-position: right 10px center;
     background-size: 12px;
-    padding-right: 30px;
-  }
+    padding-right: 30px; /* Make space for the custom arrow icon */
+    min-width: 100px; /* Ensure selects don't become too small */
+}
   
-  .date-select select:hover {
+.date-select select:hover {
     border-color: #666;
-  }
+}
   
-  .date-select select:focus {
+.date-select select:focus {
     border-color: #007bff;
     outline: none;
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
-  }
+}
   
-  .date-input-group {
+.date-input-group {
     display: flex;
     width: 100%;
     align-items: center;
-  }
+    flex-wrap: wrap; /* Allow elements within the group to wrap */
+    gap: 10px; /* Add gap for spacing */
+}
   
-  /* Checkbox styling for "Present" option */
-  .checkbox-label {
+/* Checkbox styling for "Present" option */
+.checkbox-label {
     display: flex;
     align-items: center;
     margin-left: 15px;
     color: #fff;
     cursor: pointer;
-  }
+}
   
-  .checkbox-label input[type="checkbox"] {
+.checkbox-label input[type="checkbox"] {
     margin-right: 5px;
     width: 16px;
     height: 16px;
-    accent-color: #007bff;
-  }
+    accent-color: #007bff; /* Custom color for checkbox */
+}
   
-  /* Make form field spacing more consistent */
-  .form-group {
+/* Make form field spacing more consistent */
+.form-group {
     margin-bottom: 20px;
-  }
+}
   
-  .form-row {
+.form-row {
     display: flex;
     gap: 20px;
     margin-bottom: 15px;
-  }
+    flex-wrap: wrap; /* Allow form groups in a row to wrap */
+}
   
-  .form-row .form-group {
-    flex: 1;
+.form-row .form-group {
+    flex: 1; /* Allow form groups to take equal space */
     margin-bottom: 0;
-  }
+    min-width: 150px; /* Ensure form groups don't become too small */
+}
   
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
+/* Responsive adjustments */
+@media (max-width: 768px) {
     .date-select {
-      flex-direction: column;
-      gap: 5px;
+        flex-direction: column; /* Stack date selects vertically */
+        gap: 5px;
     }
     
+    .date-select select {
+        width: 100%; /* Make selects take full width when stacked */
+        min-width: unset; /* Remove min-width when stacked */
+    }
+
     .form-row {
-      flex-direction: column;
-      gap: 15px;
+        flex-direction: column; /* Stack form rows vertically */
+        gap: 15px;
     }
     
+    .form-row .form-group {
+        min-width: unset; /* Remove min-width when stacked */
+    }
+
     .date-input-group {
-      flex-direction: column;
-      align-items: flex-start;
+        flex-direction: column; /* Stack elements within date input group */
+        align-items: flex-start; /* Align items to the start when stacked */
+        gap: 5px;
     }
     
     .checkbox-label {
-      margin-left: 0;
-      margin-top: 10px;
+        margin-left: 0; /* Remove left margin when stacked */
+        margin-top: 10px; /* Add top margin for spacing */
     }
-  }
+}
+
+@media (max-width: 480px) {
+    .date-select select {
+        padding: 8px; /* Slightly smaller padding for very small screens */
+        font-size: 0.9rem;
+    }
+    .checkbox-label {
+        font-size: 0.9rem;
+    }
+}

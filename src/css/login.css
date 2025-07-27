@@ -1,22 +1,26 @@
-/* Global Styles */
+/* Global Styles (for login page context) */
 body {
     background-color: #000;
     color: #ccc;
     font-family: 'Georgia', sans-serif;
     margin: 0;
     padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    height: 100vh; /* Ensure body takes full viewport height */
+    display: flex; /* Use flexbox for vertical centering */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    flex-direction: column; /* Stack elements vertically */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-/* Header Styles */
+/* Header Styles (if login page has its own header, otherwise general.css header applies) */
 header {
     text-align: center;
-    color: #060404;
+    color: #ffffff; /* Adjusted to white for consistency */
     margin-bottom: 20px;
+    width: 100%; /* Ensure header takes full width */
+    position: relative; /* Needed for absolute positioning of logo/hamburger if present */
+    padding: 20px 0; /* Add some padding */
 }
 
 header h1 {
@@ -30,17 +34,18 @@ header p {
     color: #aaa;
 }
 
-/* Navigation Menu Styles */
+/* Navigation Menu Styles (for login page context) */
 .nav-menu {
-    display: none;
+    display: none; /* Hidden by default, toggled by JS */
     position: absolute;
-    top: 60px;
+    top: 60px; /* Positioned below header */
     right: 20px;
     background-color: #444;
     border-radius: 5px;
     padding: 10px;
     width: 150px;
     z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Added shadow for depth */
 }
 
 /* Menu Buttons */
@@ -54,6 +59,7 @@ header p {
     margin: 5px 0;
     cursor: pointer;
     font-family: 'Georgia', sans-serif;
+    transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 .nav-menu button:hover {
@@ -66,18 +72,19 @@ header p {
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    width: 350px;
+    width: 350px; /* Fixed width */
+    max-width: 90%; /* Responsive adjustment: max width on smaller screens */
     text-align: center;
-    margin-top: 10px;
-    right: 10px;         /* Set this number to control how far from the right it is */
-    top: 20%; 
+    margin-top: 10px; /* Adjust margin from header */
+    /* Original positioning was absolute, but for centering, margin: auto is better */
+    /* right: 10px; top: 20%; */
     font-family: 'Georgia', sans-serif;
+    box-sizing: border-box; /* Include padding in width */
 }
 
 .login-container h2 {
     margin-bottom: 20px;
     color: #ffffff;
-    font-family: 'Georgia', sans-serif;
 }
 
 .login-container label {
@@ -85,7 +92,6 @@ header p {
     margin-bottom: 8px;
     text-align: left;
     color: #ccc;
-    font-family: 'Georgia', sans-serif;
 }
 
 .login-container input {
@@ -96,7 +102,7 @@ header p {
     border-radius: 4px;
     background-color: #333;
     color: white;
-    font-family: 'Georgia', sans-serif;
+    box-sizing: border-box; /* Include padding in width */
 }
 
 .login-container button {
@@ -108,7 +114,6 @@ header p {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    font-family: 'Georgia', sans-serif;
 }
 
 .login-container button:hover {
@@ -124,16 +129,48 @@ header p {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
-    display: block;
-    width: 50%;
+    display: block; /* Ensures it takes full width and new line */
+    width: 50%; /* Make it half width */
+    margin-left: auto; /* Center the button */
+    margin-right: auto; /* Center the button */
+    transition: background 0.3s ease;
 }
 
 .home-btn:hover {
     background: #555;
 }
 
-/* Align entire form in the middle of the page */
-body, html {
-    height: 100%;
+/* Responsive Styles for Login Page */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+    header p {
+        font-size: 1em;
+    }
+    .login-container {
+        padding: 25px;
+        width: 95%; /* Make it take more width on smaller screens */
+        margin-top: 10px; /* Adjust margin if header is smaller */
+    }
+    .login-container input,
+    .login-container button {
+        padding: 10px;
+    }
+    .home-btn {
+        width: 70%; /* Adjust width for smaller screens */
+    }
+}
 
-} 
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+    .login-container {
+        padding: 20px;
+        width: 98%; /* Almost full width on very small screens */
+    }
+    .home-btn {
+        width: 85%; /* Adjust width for very small screens */
+    }
+}

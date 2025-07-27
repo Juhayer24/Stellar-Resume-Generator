@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react"; // Import useState
 import '../css/general.css';
 import '../css/signup.css';
-import logo from "../components/images/logo.png";
+import logo from "../components/images/logo.png"; // Correct logo import path
 
 const Signup = () => {
+    const [menuOpen, setMenuOpen] = useState(false); // State for menu visibility
+
     // Function to handle form submission (example)
     const registerUser = (e) => {
         e.preventDefault();
@@ -15,40 +17,47 @@ const Signup = () => {
         console.log("User Registered:", { firstName, lastName, email, password });
         // You can add your form submission logic here, e.g., API request
     };
+
+    // Toggle menu visibility using state
     const toggleMenu = () => {
-        const navMenu = document.getElementById('navMenu');
-        navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
+        setMenuOpen(!menuOpen);
     };
 
     return (
         <div>
-            {/* Hamburger Menu Button */}
-            <div className="hamburger-menu" onClick={toggleMenu}>
-                <div className="bar"></div>
-                <div className="bar"></div>
-                <div className="bar"></div>
-            </div>
-
-            {/* Hidden Navigation Menu */}
-            <nav id="navMenu" className="nav-menu">
-                <button onClick={() => window.location.href = '/'}>Home</button>
-                <button onClick={() => window.location.href = '/Login'}>Login</button>
-                <button onClick={() => window.location.href = '/Template'}>Select Template</button>
-            </nav>
-
+            {/* Header Section - Contains logo, title, and hamburger menu */}
             <header>
-                <div className="container">
+                {/* Logo Section - Placed inside header for correct positioning */}
+                <a href="/">
+                    <img src={logo} alt="Website Logo" className="logo" /> {/* Correct src path */}
+                </a>
+
+                {/* Hamburger Menu Button - Placed inside header for correct positioning */}
+                <div className="hamburger-menu" onClick={toggleMenu}>
+                    {/* Corrected class names for bars to match general.css */}
+                    <div className="bar"></div>
+                    <div className="bar"></div>
+                    <div className="bar"></div>
+                </div>
+
+                {/* Navigation Menu - Conditionally rendered based on state */}
+                {menuOpen && (
+                    <nav id="navMenu" className="nav-menu"> {/* id can remain for potential external JS, but state is primary */}
+                        <button onClick={() => window.location.href = '/'}>Home</button>
+                        <button onClick={() => window.location.href = '/Login'}>Login</button>
+                        <button onClick={() => window.location.href = '/Template'}>Select Template</button>
+                    </nav>
+                )}
+
+                {/* Main Header Title and Description */}
+                <div className="container"> {/* Container for header text */}
                     <h1>Sign Up for Stellar Resume</h1>
                     <p>Please enter your details to create an account.</p>
                 </div>
             </header>
 
-            {/* Logo */}
-            <a href="/">
-                <img src="./logo.png" alt="Website Logo" className="logo" />
-            </a>
-
-            <div className="signup-container">
+            {/* Signup Form */}
+            <main className="signup-container"> {/* Use <main> for primary content */}
                 <h2>Sign Up</h2>
                 <form id="signupForm" onSubmit={registerUser}>
                     <label htmlFor="firstName">First Name:</label>
@@ -67,7 +76,7 @@ const Signup = () => {
                 </form>
 
                 <button className="back-btn" onClick={() => window.location.href = '/Login'}>Back to Login</button>
-            </div>
+            </main>
         </div>
     );
 };

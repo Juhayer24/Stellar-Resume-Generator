@@ -1,13 +1,11 @@
-
 /* Home Page Styles */
-
-
 
 .steps {
     display: flex;
     justify-content: center;
     gap: 20px;
     margin-bottom: 40px;
+    flex-wrap: wrap; /* Allow step boxes to wrap to the next line on smaller screens */
 }
 
 .step-box {
@@ -15,6 +13,8 @@
     padding: 20px;
     border-radius: 10px;
     width: 200px;
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+    flex-shrink: 0; /* Prevent the step boxes from shrinking below their content size */
 }
 
 .step-box h2 {
@@ -40,5 +40,34 @@
 
 .generate-btn:hover {
     background: #0056b3;
-    font-family: 'Georgia', sans-serif;
+}
+
+/* Responsive Styles for Home Page */
+@media (max-width: 768px) {
+    .steps {
+        flex-direction: column; /* Stack steps vertically on smaller screens */
+        align-items: center; /* Center stacked steps */
+        gap: 15px; /* Reduce gap between stacked steps */
+    }
+
+    .step-box {
+        width: 90%; /* Make step boxes take up more width on smaller screens */
+        max-width: 300px; /* Limit their maximum width */
+    }
+
+    .generate-btn {
+        padding: 12px 25px; /* Adjust button padding */
+        font-size: 1.1em; /* Adjust button font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .step-box {
+        width: 95%; /* Even wider on very small screens */
+    }
+
+    .generate-btn {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
 }

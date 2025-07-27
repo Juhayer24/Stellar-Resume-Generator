@@ -1,23 +1,26 @@
-/* Global Styles */
+/* Global Styles (for signup page context) */
 body {
     background-color: #000;
     color: #ccc;
     font-family: 'Georgia', sans-serif;
     margin: 0;
     padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    overflow-x: hidden;
+    height: 100vh; /* Ensure body takes full viewport height */
+    display: flex; /* Use flexbox for vertical centering */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    flex-direction: column; /* Stack elements vertically */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-/* Header Styles */
+/* Header Styles (if signup page has its own header, otherwise general.css header applies) */
 header {
     text-align: center;
     color: #ffffff;
     margin-bottom: 20px;
+    width: 100%; /* Ensure header takes full width */
+    position: relative; /* Needed for absolute positioning of logo/hamburger if present */
+    padding: 20px 0; /* Add some padding */
 }
 
 header h1 {
@@ -30,19 +33,19 @@ header p {
     color: #aaa;
 }
 
-
-/* Navigation Menu Styles */
+/* Navigation Menu Styles (for signup page context) */
 .nav-menu {
-    display: none; /* Hidden by default */
+    display: none; /* Hidden by default, toggled by JS */
     position: absolute;
-    top: 60px;
+    top: 60px; /* Positioned below header */
     right: 20px;
     background-color: #444;
     border-radius: 5px;
     padding: 10px;
     width: 150px;
     z-index: 1000; /* Ensure it's on top */
-    animation: slide-down 0.5s ease-in-out;
+    animation: slide-down 0.5s ease-in-out; /* Animation for menu appearance */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Added shadow for depth */
 }
 
 @keyframes slide-down {
@@ -61,6 +64,7 @@ header p {
     margin: 5px 0;
     cursor: pointer;
     font-family: 'Georgia', sans-serif;
+    transition: background-color 0.3s ease;
 }
 
 .nav-menu button:hover {
@@ -73,10 +77,13 @@ header p {
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    width: 350px;
+    width: 350px; /* Fixed width */
+    max-width: 90%; /* Responsive adjustment: max width on smaller screens */
     text-align: center;
-    animation: fadeIn 0.8s ease-in-out;
+    animation: fadeIn 0.8s ease-in-out; /* Animation for container appearance */
     font-family: 'Georgia', sans-serif;
+    box-sizing: border-box; /* Include padding in width */
+    margin-top: 10px; /* Adjust margin from header */
 }
 
 @keyframes fadeIn {
@@ -87,7 +94,6 @@ header p {
 .signup-container h2 {
     margin-bottom: 20px;
     color: #fff;
-    font-family: 'Georgia', sans-serif;
 }
 
 .signup-container label {
@@ -105,7 +111,7 @@ header p {
     border-radius: 4px;
     background-color: #333;
     color: white;
-    font-family: 'Georgia', sans-serif;
+    box-sizing: border-box; /* Include padding in width */
 }
 
 .signup-container button {
@@ -117,7 +123,6 @@ header p {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    font-family: 'Georgia', sans-serif;
 }
 
 .signup-container button:hover {
@@ -134,9 +139,39 @@ header p {
     cursor: pointer;
     margin-top: 10px;
     transition: background-color 0.3s ease;
-    font-family: 'Georgia', sans-serif;
+    width: 100%; /* Ensure button takes full width of container */
+    box-sizing: border-box; /* Include padding in width */
 }
 
 .back-btn:hover {
     background-color: #333;
+}
+
+/* Responsive Styles for Signup Page */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+    header p {
+        font-size: 1em;
+    }
+    .signup-container {
+        padding: 25px;
+        width: 95%; /* Make it take more width on smaller screens */
+        margin-top: 10px; /* Adjust margin if header is smaller */
+    }
+    .signup-container input,
+    .signup-container button {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+    .signup-container {
+        padding: 20px;
+        width: 98%; /* Almost full width on very small screens */
+    }
 }

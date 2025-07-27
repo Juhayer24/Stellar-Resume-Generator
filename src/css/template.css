@@ -1,18 +1,22 @@
-/* Global Styles */
+/* Global Styles (for template page context) */
 body {
     background-color: #000;
     color: #ccc;
     font-family: 'Georgia', sans-serif;
-
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
 
-/* Header Styles */
+/* Header Styles (if template page has its own header, otherwise general.css header applies) */
 header {
     padding: 20px;
     text-align: center;
     color: #ffffff;
     position: relative;
-    margin-top: 20px;
+    margin-top: 20px; /* Adjust as needed, considering general.css header */
+    width: 100%; /* Ensure header takes full width */
+    box-sizing: border-box; /* Include padding in width */
 }
 
 header h1 {
@@ -24,22 +28,24 @@ header p {
     color: #aaa;
 }
 
-/* Navigation Menu Styles */
+/* Navigation Menu Styles (for template page context) */
 .nav-menu {
-    /* display: none; */
+    /* display: none; */ /* Original was commented out, but typically hidden by default */
     position: absolute;
-    top:40px !important;
-    right: -160px !important;
-    background-color: #000000 !important;
+    top: 40px !important; /* Overriding with !important as seen in original */
+    right: -160px !important; /* Overriding with !important as seen in original */
+    background-color: #000000 !important; /* Overriding with !important as seen in original */
     border-radius: 5px;
     padding: 10px;
-    width: 90px !important;
-    /* visibility: hidden; */
-    /* opacity: 0; */
+    width: 90px !important; /* Overriding with !important as seen in original */
+    visibility: hidden; /* Use visibility and opacity for smooth transition */
+    opacity: 0;
     transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000; /* Ensure it's on top */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Added shadow for depth */
 }
 
-/* Home Button Styles */
+/* Home Button Styles (within nav-menu) */
 .nav-menu button {
     width: 100%;
     background-color: #007bff;
@@ -49,10 +55,11 @@ header p {
     border-radius: 5px;
     cursor: pointer;
     font-family: 'Georgia', sans-serif;
+    transition: background-color 0.3s ease;
 }
 
 .nav-menu.show {
-    display: block;
+    display: block; /* Change display when 'show' class is added by JS */
     visibility: visible;
     opacity: 1;
 }
@@ -67,7 +74,8 @@ header p {
     gap: 30px;
     justify-content: center;
     padding: 50px 0;
-    margin-top: -50px;
+    margin-top: -50px; /* Adjust to pull content up, if needed */
+    flex-wrap: wrap; /* Allow template boxes to wrap to the next line */
 }
 
 /* Template Box */
@@ -76,19 +84,22 @@ header p {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    width: 300px;
-    height: 450px;
+    width: 300px; /* Fixed width */
+    height: 450px; /* Fixed height */
     display: flex;
-    flex-direction: column; /* Stack items */
+    flex-direction: column; /* Stack items vertically */
     align-items: center;
     justify-content: space-between;
     position: relative;
+    box-sizing: border-box; /* Include padding in width/height */
+    margin-bottom: 20px; /* Add space between rows of template boxes */
 }
 
 /* Template Image */
 .template-img {
-    width: 300px;
-    height: 400px;
+    width: 100%; /* Make image responsive within its container */
+    height: 300px; /* Fixed height for consistency */
+    object-fit: cover; /* Cover the area, cropping if necessary */
     border-radius: 10px;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
@@ -114,4 +125,52 @@ header p {
 
 .template-overlay:hover {
     background: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive Styles for Template Page */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+    header p {
+        font-size: 1em;
+    }
+    .template-container {
+        flex-direction: column; /* Stack template boxes vertically */
+        align-items: center; /* Center stacked boxes */
+        gap: 20px; /* Reduce gap between stacked boxes */
+        padding: 30px 0;
+    }
+    .template-box {
+        width: 90%; /* Make template boxes take more width on smaller screens */
+        max-width: 350px; /* Limit their maximum width */
+        height: auto; /* Allow height to adjust based on content */
+        padding-bottom: 60px; /* Ensure space for the overlay button */
+    }
+    .template-img {
+        height: 250px; /* Adjust image height for smaller screens */
+    }
+    /* Adjust nav-menu positioning if header changes size */
+    .nav-menu {
+        top: 55px !important; /* Adjust if header height changes */
+        right: 10px !important;
+        width: 120px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+    .template-box {
+        width: 95%; /* Even wider on very small screens */
+    }
+    .template-img {
+        height: 200px; /* Further adjust image height */
+    }
+    .nav-menu {
+        top: 50px !important;
+        right: 5px !important;
+        width: 100px !important;
+    }
 }
